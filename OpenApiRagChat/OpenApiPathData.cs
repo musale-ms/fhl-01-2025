@@ -3,10 +3,11 @@ using Microsoft.OpenApi.Models;
 
 namespace OpenApiRagChat;
 
-public class OpenApiPathData
+
+public class OpenApiPathData<TKey> where TKey : notnull
 {
     [VectorStoreRecordKey]
-    public Guid Key { get; set; }
+    public required TKey Key { get; set; }
     [VectorStoreRecordData]
     public string? Version { get; set; }
     // [VectorStoreRecordData]
@@ -19,6 +20,6 @@ public class OpenApiPathData
     public string? Operation { get; set; }
     [VectorStoreRecordData]
     public string? Summary { get; set; }
-    [VectorStoreRecordVector(384, DistanceFunction.CosineSimilarity)]
+    [VectorStoreRecordVector(3072, DistanceFunction.CosineSimilarity)]
     public ReadOnlyMemory<float> SummaryVector { get; set; }
 }

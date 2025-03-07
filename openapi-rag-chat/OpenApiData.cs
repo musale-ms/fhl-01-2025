@@ -19,7 +19,7 @@ public class OpenApiData
     [VectorStoreRecordData]
     public string? Operation { get; set; }
     [VectorStoreRecordData]
-    public string? Summary { get; set; }
+    public required string Summary { get; set; }
     [VectorStoreRecordVector(384, DistanceFunction.CosineSimilarity)]
     public ReadOnlyMemory<float> Vector { get; set; }
 }

@@ -1,16 +1,16 @@
 using Microsoft.OpenApi.Readers;
 
 namespace OpenApiRagChat;
-internal sealed class Dataloader() : IDataloader
+public sealed class Dataloader() : IDataloader
 {
-    IEnumerable<OpenApiPathData> IDataloader.LoadOpenApiData(string openApiFilePath)
+    public IEnumerable<OpenApiPathData<TKey>> LoadOpenApiData<TKey>(string openApiFilePath) where TKey : notnull
     {
         using var stream = new FileStream(openApiFilePath, FileMode.Open, FileAccess.Read);
         var openApiDocument = new OpenApiStreamReader().Read(stream, out var diagnostic);
-        List<OpenApiPathData> data = [];
+        List<OpenApiPathData<Guid>> data = [];
         foreach (var path in openApiDocument.Paths)
         {
-            OpenApiPathData openApiPathData = new()
+            OpenApiPathData<Guid> openApiPathData = new()
             {
                 Key = Guid.NewGuid(),
                 Version = openApiDocument.Info.Version,
@@ -25,6 +25,6 @@ internal sealed class Dataloader() : IDataloader
             }
             data.Add(openApiPathData);
         }
-        return data;
+        return (IEnumerable<OpenApiPathData<TKey>>)data;
     }
 }
