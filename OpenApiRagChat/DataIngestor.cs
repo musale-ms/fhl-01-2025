@@ -1,5 +1,6 @@
 using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel.Embeddings;
+using Qdrant.Client.Grpc;
 namespace OpenApiRagChat;
 
 #pragma warning disable SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
@@ -7,6 +8,13 @@ public sealed class DataIngestor(IVectorStore vectorStore, ITextEmbeddingGenerat
 {
 #pragma warning restore SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
     readonly string collectionName = "ccs_beta_open_api_data";
+
+    public IVectorStoreRecordCollection<TKey, OpenApiPathData<TKey>> GetCollection<TKey>() where TKey : notnull
+    {
+        var collection = vectorStore.GetCollection<TKey, OpenApiPathData<TKey>>(collectionName);
+        return collection;
+    }
+
     public async Task<IEnumerable<TKey>> ImportDataAsync<TKey>() where TKey : notnull
     {
         // Get and create collection if it doesn't exist.
