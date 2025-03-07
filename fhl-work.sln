@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fhl-work", "fhl-work.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "openapi-rag-chat", "openapi-rag-chat\openapi-rag-chat.csproj", "{AD6549D8-B4E9-478D-BCDA-83E7FDBEA449}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiRagChat", "OpenApiRagChat\OpenApiRagChat.csproj", "{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{AD6549D8-B4E9-478D-BCDA-83E7FDBEA449}.Release|x64.Build.0 = Release|Any CPU
 		{AD6549D8-B4E9-478D-BCDA-83E7FDBEA449}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD6549D8-B4E9-478D-BCDA-83E7FDBEA449}.Release|x86.Build.0 = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|x64.Build.0 = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Debug|x86.Build.0 = Debug|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|x64.ActiveCfg = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|x64.Build.0 = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|x86.ActiveCfg = Release|Any CPU
+		{900BE491-4DEF-4C8D-9FCD-6ADF9D7BA266}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
